@@ -1,200 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Nexora - Portal de Notícias de Tecnologia</title>
-    <style>
-        body { 
-            background-color: #121212; 
-            color: white; 
-            font-family: Arial, sans-serif; 
-            padding: 0; 
-            margin: 0;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b5cff">
+<title>TwoSix 2.6 Mobile</title>
+<link rel="stylesheet" href="styles.css">
 
-        /* --- TOPO DUPLO: LOGO + PATROCINADOR --- */
-        .topo-container {
-            background-color: #0b0c10;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-            border-bottom: 2px solid #1db954;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px; /* Espaço entre o logo e o anúncio */
-            flex-wrap: wrap; /* Garante que quebre linha em telas muito pequenas */
-        }
-        
-        .header-nexora-logo {
-            flex: 0 1 auto;
-        }
-        
-        .header-nexora-logo img {
-            max-width: 380px; /* Tamanho do logotipo */
-            height: auto;
-            display: block;
-        }
-        
-        /* Espaço do Patrocinador Ajustado para 600x250px com a Nova Imagem */
-        .box-anuncio { 
-            width: 600px; 
-            height: 250px; 
-            border: 3px dashed #555; 
-            background: #000; 
-            position: relative; 
-            overflow: hidden; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 6px;
-            flex-shrink: 0;
-        }
-        
-        .box-anuncio img { 
-            width: 600px; 
-            height: 250px; 
-            object-fit: cover; /* Ajusta a imagem perfeitamente ao bloco */
-        }
-
-        .tag-anuncio {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: rgba(0,0,0,0.8);
-            color: #1db954;
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            z-index: 10;
-        }
-
-        /* --- SEÇÃO DE NOTÍCIAS AUTOMÁTICAS --- */
-        .titulo-secao {
-            text-align: center;
-            margin-top: 40px;
-            color: #1db954;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .container-noticias {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            padding: 20px 20px 40px 20px;
-            text-align: left;
-        }
-
-        .card-noticia {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-
-        .card-noticia:hover {
-            transform: translateY(-4px);
-        }
-
-        .card-noticia img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #2b2b2b;
-        }
-
-        .conteudo-noticia {
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .titulo-noticia {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-            color: #ffffff;
-            line-height: 1.4;
-        }
-
-        .resumo-noticia {
-            font-size: 13px;
-            color: #aaaaaa;
-            margin-bottom: 15px;
-            line-height: 1.5;
-            flex-grow: 1;
-        }
-
-        .btn-ler-mais {
-            color: #1db954;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            margin-top: auto;
-        }
-
-        .btn-ler-mais:hover {
-            text-decoration: underline;
-        }
-    </style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TwoSix">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
 </head>
 <body>
+<div id="boot" class="boot">
+  <div class="brand-lockup">
+    <svg class="logo xl" viewBox="0 0 120 120" aria-label="TwoSix">
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18d5ff"/><stop offset=".55" stop-color="#0b5cff"/><stop offset="1" stop-color="#7957ff"/></linearGradient></defs>
+      <path d="M18 26c0-6 5-11 11-11h54c8 0 12 9 7 15L52 72H34c-8 0-12-9-7-15l25-31H29z" fill="url(#lg)"/>
+      <path d="M68 49h20c8 0 13 8 9 15L77 98c-3 5-8 7-13 7H35c-8 0-12-9-7-15l14-18h22L53 86h13l16-27H68z" fill="#eef7ff"/>
+    </svg>
+    <div><h1>TwoSix</h1><p>2.6 Mobile</p></div>
+  </div>
+  <div id="bootText" class="boot-text">Verificando o ambiente portátil...</div>
+  <div class="progress"><span id="bootBar"></span></div>
+</div>
 
-    <div class="topo-container">
-        <div class="header-nexora-logo">
-            <img src="Nexora.png" alt="Nexora - Tecnologia que conecta o futuro">
-        </div>
-
-        <div class="box-anuncio">
-            <span class="tag-anuncio">Patrocínio</span>
-            <a href="https://wa.me/5561984912720" target="_blank" title="Anuncie Conosco">
-                <img src="Espaço do anunciante.png" alt="Espaço de Patrocínio - Anuncie Aqui">
-            </a>
-        </div>
+<section id="setup" class="setup hidden">
+  <div class="setup-card">
+    <div class="setup-brand">
+      <svg class="logo" viewBox="0 0 120 120"><path d="M18 26c0-6 5-11 11-11h54c8 0 12 9 7 15L52 72H34c-8 0-12-9-7-15l25-31H29z" fill="#0b5cff"/><path d="M68 49h20c8 0 13 8 9 15L77 98c-3 5-8 7-13 7H35c-8 0-12-9-7-15l14-18h22L53 86h13l16-27H68z" fill="#edf7ff"/></svg>
+      <div><b>TwoSix 2.3</b><small>Primeira inicialização</small></div>
     </div>
+    <div id="setupPage1" class="setup-page">
+      <h2>Bem-vindo ao TwoSix Portable</h2>
+      <p>Seu ambiente de produtividade será executado no navegador, a partir do pendrive.</p>
+      <button class="primary" id="setupNext">Começar</button>
+    </div>
+    <div id="setupPage2" class="setup-page hidden">
+      <h2>Personalize seu ambiente</h2>
+      <label>Nome de exibição<input id="setupName" maxlength="40" placeholder="Usuário"></label>
+      <div class="themes">
+        <button data-theme="dark" class="theme-card selected"><span class="theme dark"></span>Escuro</button>
+        <button data-theme="light" class="theme-card"><span class="theme light"></span>Claro</button>
+        <button data-theme="auto" class="theme-card"><span class="theme auto"></span>Automático</button>
+      </div>
+      <label>PIN opcional (4–12 números)<input id="setupPin" type="password" inputmode="numeric" maxlength="12" placeholder="Opcional"></label>
+      <p class="hint">O PIN protege a sessão do TwoSix; não substitui criptografia do pendrive.</p>
+      <div class="wallpaper-setup">
+        <h3>Aparência da tela inicial</h3>
+        <div class="wallpaper-options" id="setupWallpaperOptions">
+          <button class="wall-card selected" data-wall="classic"><img src="assets/wallpapers/01-classic-blue.svg" alt=""><span>Clássica Azul</span></button>
+          <button class="wall-card" data-wall="light"><img src="assets/wallpapers/02-light-minimal.svg" alt=""><span>Clara Minimalista</span></button>
+          <button class="wall-card" data-wall="neon"><img src="assets/wallpapers/03-neon-tech.svg" alt=""><span>Tecnologia Neon</span></button>
+          <button class="wall-card" data-wall="executive"><img src="assets/wallpapers/04-executive-graphite.svg" alt=""><span>Executiva Sóbria</span></button>
+          <button class="wall-card" data-wall="abstract"><img src="assets/wallpapers/05-soft-abstract.svg" alt=""><span>Suave Abstrata</span></button>
+        </div>
+        <label class="random-wall"><input id="setupRandomWall" type="checkbox"> Escolher uma das 5 aparências aleatoriamente a cada abertura</label>
+      </div>
 
-    <h2 class="titulo-secao">Últimas Atualizações Tecnológicas</h2>
+      <div class="actions"><button id="setupBack">Voltar</button><button id="setupFinish" class="primary">Concluir</button></div>
+    </div>
+  </div>
+</section>
 
-    <div class="container-noticias" id="lista-noticias"></div>
+<section id="lock" class="lock hidden">
+  <div class="lock-card">
+    <svg class="logo big" viewBox="0 0 120 120"><path d="M18 26c0-6 5-11 11-11h54c8 0 12 9 7 15L52 72H34c-8 0-12-9-7-15l25-31H29z" fill="#0b5cff"/><path d="M68 49h20c8 0 13 8 9 15L77 98c-3 5-8 7-13 7H35c-8 0-12-9-7-15l14-18h22L53 86h13l16-27H68z" fill="#edf7ff"/></svg>
+    <div id="lockClock" class="lock-clock"></div>
+    <div id="lockUser">Usuário</div>
+    <input id="lockPin" class="lock-input hidden" type="password" inputmode="numeric" placeholder="PIN">
+    <button id="unlockBtn" class="primary">Entrar</button>
+    <div id="lockError" class="error"></div>
+  </div>
+</section>
 
-    <script>
-        const noticiasSuporte = [
-            { title: "Inteligência Artificial revoluciona a criação de softwares em 2026", summary: "Novas ferramentas de IA permitem que desenvolvedores programem sistemas complexos na metade do tempo estimado.", url: "https://g1.globo.com/tecnologia/", img: "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=400&h=250&fit=crop" },
-            { title: "Redes 5G atingem cobertura recorde nas capitais do Brasil", summary: "Instalação de novas antenas avança e sinal de alta velocidade chega a mais bairros periféricos e regiões comerciais.", url: "https://tecnoblog.net/", img: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=400&h=250&fit=crop" },
-            { title: "Mercado de cibersegurança dispara com busca por proteção de dados", summary: "Empresas aumentam investimentos em segurança digital para proteger operações em nuvem e dados de clientes.", url: "https://canaltech.com.br/", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" },
-            { title: "Novos processadores prometem o dobro de rendimento e consumo menor", summary: "Fabricantes anunciam arquiteturas focadas em eficiência energética para notebooks corporativos e servidores.", url: "https://tecnoblog.net/", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop" },
-            { title: "Cresce o uso de realidade aumentada no comércio digital brasileiro", summary: "Lojas virtuais integram provadores online para reduzir taxas de devolução de produtos e melhorar experiência.", url: "https://canaltech.com.br/", img: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=400&h=250&fit=crop" },
-            { title: "Sistemas em nuvem ganham força na gestão de pequenas empresas", summary: "Softwares integrados e acessíveis permitem automação de estoque e finanças sem necessidade de servidores locais.", url: "https://g1.globo.com/tecnologia/", img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=400&h=250&fit=crop" }
-        ];
+<div id="desktop" class="desktop hidden">
+  <header class="topbar">
+    <div class="top-brand"><svg class="logo sm" viewBox="0 0 120 120"><path d="M18 26c0-6 5-11 11-11h54c8 0 12 9 7 15L52 72H34c-8 0-12-9-7-15l25-31H29z" fill="#0b5cff"/><path d="M68 49h20c8 0 13 8 9 15L77 98c-3 5-8 7-13 7H35c-8 0-12-9-7-15l14-18h22L53 86h13l16-27H68z" fill="#edf7ff"/></svg><b>TwoSix</b><small>2.6 Mobile</small></div>
+    <div id="storageStatus" class="status">● verificando armazenamento...</div>
+    <div id="clock"></div>
+  </header>
 
-        function carregarNoticias() {
-            const container = document.getElementById('lista-noticias');
-            
-            noticiasSuporte.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'card-noticia';
-                
-                card.innerHTML = `
-                    <img src="${item.img}" alt="Notícia">
-                    <div class="conteudo-noticia">
-                        <p class="titulo-noticia">${item.title}</p>
-                        <p class="resumo-noticia">${item.summary}</p>
-                        <a href="${item.url}" target="_blank" class="btn-ler-mais">Ler notícia completa →</a>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+  <main id="desktopArea" class="desktop-area">
+    <button class="desktop-icon" data-app="files"><span>📁</span><b>Arquivos</b></button>
+    <button class="desktop-icon" data-app="writer"><span>📝</span><b>Writer</b></button>
+    <button class="desktop-icon" data-app="calc"><span>📊</span><b>Calc</b></button>
+    <button class="desktop-icon" data-app="slides"><span>📽️</span><b>Slides</b></button>
+    <button class="desktop-icon" data-app="notes"><span>🗒️</span><b>Notas</b></button>
+    <button class="desktop-icon" data-app="trash"><span>🗑️</span><b>Lixeira</b></button>
+    <button class="desktop-icon" data-app="remote"><span>🖥️</span><b>Remote</b></button>
+    <button class="desktop-icon" data-app="backup"><span>💾</span><b>Backup</b></button>
+    <button class="desktop-icon" data-app="settings"><span>⚙️</span><b>Config.</b></button>
+  </main>
 
-        carregarNoticias();
-    </script>
+  <section id="startMenu" class="start-menu hidden">
+    <div class="start-head"><div><strong id="startUser">Usuário</strong><small>TwoSix Remote Secure</small></div><button id="powerBtn" title="Encerrar">⏻</button></div>
+    <input id="searchApps" class="search" placeholder="Pesquisar aplicativos...">
+    <div id="appGrid" class="app-grid"></div>
+    <div class="start-bottom"><button id="lockBtn">🔒 Bloquear</button><button data-app-open="about">ℹ️ Sobre</button></div>
+  </section>
+
+  <aside id="quickPanel" class="quick-panel hidden">
+    <div class="quick-title"><b>Controles rápidos</b><span id="quickClock"></span></div>
+    <div class="quick-grid">
+      <button id="themeQuick" class="quick">◐<span>Tema</span></button>
+      <button id="focusQuick" class="quick">🌙<span>Foco</span></button>
+      <button class="quick active">🛡️<span>Local</span></button>
+      <button class="quick active">💾<span>USB</span></button>
+    </div>
+    <label>Brilho visual<input id="brightness" type="range" min="70" max="115" value="100"></label>
+  </aside>
+
+  <section id="windowLayer" class="window-layer"></section>
+
+
+  <nav id="mobileNav" class="mobile-nav">
+    <button data-mobile-app="files"><span>📁</span><small>Arquivos</small></button>
+    <button data-mobile-app="writer"><span>📝</span><small>Writer</small></button>
+    <button data-mobile-app="remote"><span>🖥️</span><small>Remote</small></button>
+    <button data-mobile-app="settings"><span>⚙️</span><small>Ajustes</small></button>
+  </nav>
+
+  <footer class="taskbar">
+    <button id="startBtn" class="task-logo"><svg viewBox="0 0 120 120"><path d="M18 26c0-6 5-11 11-11h54c8 0 12 9 7 15L52 72H34c-8 0-12-9-7-15l25-31H29z" fill="currentColor"/><path d="M68 49h20c8 0 13 8 9 15L77 98c-3 5-8 7-13 7H35c-8 0-12-9-7-15l14-18h22L53 86h13l16-27H68z" fill="#fff"/></svg></button>
+    <button id="taskSearch" class="task-search">⌕ <span>Pesquisar</span></button>
+    <div id="taskApps" class="task-apps"></div>
+    <button id="trayBtn" class="tray-btn">🌐 🔊 🔋</button>
+  </footer>
+</div>
+
+<template id="windowTemplate">
+  <article class="window">
+    <header class="window-bar"><div class="window-title"></div><div class="window-controls"><button data-act="min">—</button><button data-act="max">□</button><button data-act="close">×</button></div></header>
+    <div class="window-body"></div>
+  </article>
+</template>
+
+<script src="app.js"></script>
 </body>
 </html>
