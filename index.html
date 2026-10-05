@@ -1,4 +1,158 @@
-<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TwoSix Mobile</title>
-<script>location.replace("web/index.html")</script>
-<noscript><a href="web/index.html">Abrir TwoSix Mobile</a></noscript>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b5cff">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self' https:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="no-referrer">
+<title>TwoSix 5.1</title>
+<link rel="stylesheet" href="styles.css">
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TwoSix">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+<div id="boot" class="boot">
+  <div class="brand-lockup brand-lockup-logo3">
+    <img class="brand-logo-full" src="assets/brand/twosix-logo-full.png" alt="TwoSix 5.1">
+  </div>
+  <div id="bootText" class="boot-text">Verificando o ambiente portátil...</div>
+  <div class="progress"><span id="bootBar"></span></div>
+</div>
+
+<section id="setup" class="setup hidden">
+  <div class="setup-card">
+    <div class="setup-brand">
+      <img class="logo logo3" src="assets/brand/twosix-mark.png" alt="TwoSix">
+      <div><b>TwoSix 5.1</b><small>Primeira inicialização</small></div>
+    </div>
+    <div id="setupPage1" class="setup-page">
+      <h2>Bem-vindo ao TwoSix 5.1</h2>
+      <p>Seu ambiente de produtividade será executado no navegador, a partir do pendrive.</p>
+      <button class="primary" id="setupNext">Começar</button>
+    </div>
+    <div id="setupPage2" class="setup-page hidden">
+      <h2>Personalize seu ambiente</h2>
+      <div id="setupScrollHint" class="setup-scroll-hint">Deslize a tela para baixo para ver todas as opções e concluir.</div>
+      <label>Nome de exibição<input id="setupName" maxlength="40" placeholder="Usuário"></label>
+      <div class="themes">
+        <button data-theme="dark" class="theme-card selected"><span class="theme dark"></span>Escuro</button>
+        <button data-theme="light" class="theme-card"><span class="theme light"></span>Claro</button>
+        <button data-theme="auto" class="theme-card"><span class="theme auto"></span>Automático</button>
+      </div>
+      <label>PIN opcional (4–12 números)<input id="setupPin" type="password" inputmode="numeric" maxlength="12" placeholder="Opcional"></label>
+      <p class="hint">O PIN protege a sessão do TwoSix; não substitui criptografia do pendrive.</p>
+      <div class="wallpaper-setup">
+        <h3>Aparência da tela inicial</h3>
+        <div class="wallpaper-options" id="setupWallpaperOptions">
+          <button class="wall-card selected" data-wall="classic"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMDcxMTFmIi8+PHN0b3Agb2Zmc2V0PSIuNiIgc3RvcC1jb2xvcj0iIzBkMjg1MCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA3MTUyMiIvPjwvbGluZWFyR3JhZGllbnQ+CiA8cmFkaWFsR3JhZGllbnQgaWQ9ImciPjxzdG9wIHN0b3AtY29sb3I9IiMyYjdjZmYiIHN0b3Atb3BhY2l0eT0iLjQ4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3Y2ZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjQwMCIgY3k9IjI0MCIgcj0iNTIwIiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9IjE1NTAiIGN5PSI4ODAiIHI9IjQyMCIgZmlsbD0idXJsKCNnKSIgb3BhY2l0eT0iLjQ1Ii8+CjxwYXRoIGQ9Ik0wIDc5MCBDMzYwIDcwMCA2MDAgOTAwIDk2MCA4MjAgUzE1MDAgNjUwIDE5MjAgNzcwIEwxOTIwIDEwODAgTDAgMTA4MFoiIGZpbGw9IiMwYTFlMzgiIG9wYWNpdHk9Ii43MiIvPgo8L3N2Zz4=" alt=""><span>Clássica Azul</span></button>
+          <button class="wall-card" data-wall="light"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZWVmNWZiIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiNkZmVhZjciLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjZGRkZWYiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjI4MCIgY3k9IjE4MCIgcj0iMzYwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIuNjgiLz4KPGNpcmNsZSBjeD0iMTY0MCIgY3k9Ijg2MCIgcj0iNDIwIiBmaWxsPSIjYjlkNWYyIiBvcGFjaXR5PSIuNTUiLz4KPHBhdGggZD0iTTAgODIwIFE0MjAgNjgwIDg2MCA4MjAgVDE5MjAgNzgwIEwxOTIwIDEwODAgTDAgMTA4MFoiIGZpbGw9IiNkNmU2ZjUiLz4KPC9zdmc+" alt=""><span>Clara Minimalista</span></button>
+          <button class="wall-card" data-wall="neon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMDMwNzEyIi8+PHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0iIzA4MTUyYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA1MDkxMyIvPjwvbGluZWFyR3JhZGllbnQ+CiA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIj48c3RvcCBzdG9wLWNvbG9yPSIjMDlkN2ZmIi8+PHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0iIzBiNWNmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzdkNWNmZiIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjE5MjAiIGhlaWdodD0iMTA4MCIgZmlsbD0idXJsKCNiZykiLz4KPGcgb3BhY2l0eT0iLjE3IiBzdHJva2U9InVybCgjbGluZSkiIGZpbGw9Im5vbmUiPgogPHBhdGggZD0iTTAgMTgwIEgxOTIwIi8+PHBhdGggZD0iTTAgMzYwIEgxOTIwIi8+PHBhdGggZD0iTTAgNTQwIEgxOTIwIi8+PHBhdGggZD0iTTAgNzIwIEgxOTIwIi8+PHBhdGggZD0iTTAgOTAwIEgxOTIwIi8+CiA8cGF0aCBkPSJNMjQwIDAgVjEwODAiLz48cGF0aCBkPSJNNDgwIDAgVjEwODAiLz48cGF0aCBkPSJNNzIwIDAgVjEwODAiLz48cGF0aCBkPSJNOTYwIDAgVjEwODAiLz48cGF0aCBkPSJNMTIwMCAwIFYxMDgwIi8+PHBhdGggZD0iTTE0NDAgMCBWMTA4MCIvPjxwYXRoIGQ9Ik0xNjgwIDAgVjEwODAiLz4KPC9nPgo8cGF0aCBkPSJNODAgNzcwIEMzNjAgNjAwIDU0MCA5MzAgODgwIDY5MCBTMTQ3MCA1NDAgMTg0MCA3MjAiIHN0cm9rZT0idXJsKCNsaW5lKSIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNTUiLz4KPGNpcmNsZSBjeD0iMTQ2MCIgY3k9IjI2MCIgcj0iMjIwIiBmaWxsPSIjMGI1Y2ZmIiBvcGFjaXR5PSIuMTMiLz4KPC9zdmc+" alt=""><span>Tecnologia Neon</span></button>
+          <button class="wall-card" data-wall="executive"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMTIxNjFkIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiMxZTI5MzYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxMDE1MWMiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIGZpbGw9InVybCgjYmcpIi8+CjxwYXRoIGQ9Ik0wIDAgSDgyMCBMMzQwIDEwODAgSDBaIiBmaWxsPSIjMmEzNTQ0IiBvcGFjaXR5PSIuNTUiLz4KPHBhdGggZD0iTTE5MjAgMCBIMTMyMCBMMTU4MCAxMDgwIEgxOTIwWiIgZmlsbD0iIzBiNWNmZiIgb3BhY2l0eT0iLjEzIi8+CjxwYXRoIGQ9Ik0wIDg2MCBMMTkyMCA2NzAgTDE5MjAgMTA4MCBMMCAxMDgwWiIgZmlsbD0iIzBlMTQxYiIgb3BhY2l0eT0iLjU4Ii8+Cjwvc3ZnPg==" alt=""><span>Executiva Sóbria</span></button>
+          <button class="wall-card" data-wall="abstract"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMTAyMTNiIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiMxOTQ3NmMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNTMxNGYiLz48L2xpbmVhckdyYWRpZW50PgogPHJhZGlhbEdyYWRpZW50IGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjNjFkNWZmIiBzdG9wLW9wYWNpdHk9Ii42MiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYxZDVmZiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD4KIDxyYWRpYWxHcmFkaWVudCBpZD0iYiI+PHN0b3Agc3RvcC1jb2xvcj0iIzhiNzJmZiIgc3RvcC1vcGFjaXR5PSIuNDgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4YjcyZmYiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjE5MjAiIGhlaWdodD0iMTA4MCIgZmlsbD0idXJsKCNiZykiLz4KPGVsbGlwc2UgY3g9IjQ4MCIgY3k9IjMxMCIgcng9IjUyMCIgcnk9IjM5MCIgZmlsbD0idXJsKCNhKSIvPgo8ZWxsaXBzZSBjeD0iMTQ1MCIgY3k9Ijc3MCIgcng9IjU2MCIgcnk9IjQzMCIgZmlsbD0idXJsKCNiKSIvPgo8cGF0aCBkPSJNMCA3NDAgQzMwMCA1OTAgNjUwIDk4MCAxMDUwIDc3MCBTMTU4MCA1ODAgMTkyMCA3NjAgTDE5MjAgMTA4MCBMMCAxMDgwWiIgZmlsbD0iIzEzMzA0YSIgb3BhY2l0eT0iLjU1Ii8+Cjwvc3ZnPg==" alt=""><span>Suave Abstrata</span></button>
+        </div>
+        <label class="random-wall"><input id="setupRandomWall" type="checkbox"> Escolher uma das 5 aparências aleatoriamente a cada abertura</label>
+      </div>
+
+      <div class="legal-accept-box"><div><button type="button" id="setupTermsBtn">Termos de Uso</button> <button type="button" id="setupPrivacyBtn">Política de Privacidade</button></div><label><input id="setupLegalAccept" type="checkbox"> Li e aceito os Termos de Uso e declaro ciência da Política de Privacidade.</label></div>
+      <div class="actions"><button id="setupBack">Voltar</button><button id="setupFinish" class="primary">Concluir</button></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="legalGate" class="setup hidden">
+ <div class="setup-card legal-gate-card"><div class="setup-brand"><img class="logo logo3" src="assets/brand/twosix-mark.png" alt="TwoSix"><div><b>TwoSix 5.1</b><small>Atualização jurídica e de privacidade</small></div></div><div class="setup-page"><h2>Termos e Privacidade atualizados</h2><p>Para continuar usando esta versão, consulte os documentos vigentes e registre seu aceite.</p><p><button id="legalGateTerms">Ler Termos</button> <button id="legalGatePrivacy">Ler Privacidade</button></p><label><input id="legalGateAccept" type="checkbox"> Li e aceito os Termos de Uso e declaro ciência da Política de Privacidade.</label><div class="actions"><button id="legalGateFinish" class="primary">Continuar</button></div></div></div>
+</section>
+<section id="legalViewer" class="setup hidden"><div class="setup-card legal-viewer-card"><div class="setup-page"><h2 id="legalViewerTitle">Documento</h2><div id="legalViewerBody" class="legal-document"></div><div class="actions"><button id="legalViewerClose" class="primary">Fechar</button></div></div></div></section>
+<section id="lock" class="lock hidden">
+  <div class="lock-card">
+    <img class="logo big logo3" src="assets/brand/twosix-mark.png" alt="TwoSix">
+    <div id="lockClock" class="lock-clock"></div>
+    <div id="lockUser">Usuário</div>
+    <input id="lockPin" class="lock-input hidden" type="password" inputmode="numeric" placeholder="PIN">
+    <button id="unlockBtn" class="primary">Entrar</button>
+    <div id="lockError" class="error"></div>
+  </div>
+</section>
+
+<div id="desktop" class="desktop hidden">
+  <header class="topbar">
+    <div class="top-brand"><img class="logo sm logo3" src="assets/brand/twosix-mark.png" alt="TwoSix"><b>TwoSix</b><small>5.1</small></div>
+    <div id="storageStatus" class="status">● verificando armazenamento...</div>
+    <div id="clock"></div>
+  </header>
+
+  <main id="desktopArea" class="desktop-area">
+    <button class="desktop-icon" data-app="files"><span>💽</span><b>Drive</b></button>
+    <button class="desktop-icon" data-app="litework"><span>🧰</span><b>LiteWorkSuite</b></button>
+    <button class="desktop-icon" data-app="notes"><span>🗒️</span><b>Notas</b></button>
+    <button class="desktop-icon" data-app="calculator"><span>🧮</span><b>Calculadora</b></button>
+    <button class="desktop-icon" data-app="calendar"><span>📅</span><b>Calendário</b></button>
+    <button class="desktop-icon" data-app="clock"><span>⏱️</span><b>Relógio</b></button>
+    <button class="desktop-icon" data-app="media"><span>🎧</span><b>Mídia</b></button>
+    <button class="desktop-icon" data-app="viewer"><span>🖼️</span><b>Visualizador</b></button>
+    <button class="desktop-icon" data-app="camera"><span>📷</span><b>Câmera</b></button>
+    <button class="desktop-icon" data-app="recorder"><span>🎙️</span><b>Gravador</b></button>
+    <button class="desktop-icon" data-app="system"><span>📟</span><b>Sistema</b></button>
+    <button class="desktop-icon" data-app="network"><span>🌐</span><b>Rede</b></button>
+    <button class="desktop-icon" data-app="remote"><span>🖥️</span><b>Native Remote</b></button>
+    <button class="desktop-icon" data-app="backup"><span>💾</span><b>Backup</b></button>
+    <button class="desktop-icon" data-app="settings"><span>⚙️</span><b>Ajustes</b></button>
+    <button class="desktop-icon" data-app="legal"><span>📜</span><b>Legal</b></button>
+  </main>
+
+  <section id="startMenu" class="start-menu hidden">
+    <div class="start-head"><div><strong id="startUser">Usuário</strong><small>TwoSix 5.1</small></div><button id="powerBtn" title="Encerrar">⏻</button></div>
+    <input id="searchApps" class="search" placeholder="Pesquisar aplicativos...">
+    <div id="appGrid" class="app-grid"></div>
+    <div class="start-bottom"><button id="lockBtn">🔒 Bloquear</button><button data-app-open="about">ℹ️ Sobre</button></div>
+  </section>
+
+  <aside id="quickPanel" class="quick-panel hidden">
+    <div class="quick-title"><b>Controles rápidos</b><span id="quickClock"></span></div>
+    <div class="quick-grid">
+      <button id="themeQuick" class="quick">◐<span>Tema</span></button>
+      <button id="focusQuick" class="quick">🌙<span>Foco</span></button>
+      <button class="quick active">🛡️<span>Local</span></button>
+      <button class="quick active">💾<span>USB</span></button>
+    </div>
+    <label>Brilho visual<input id="brightness" type="range" min="70" max="115" value="100"></label>
+  </aside>
+
+  <section id="windowLayer" class="window-layer"></section>
+
+
+  <nav id="mobileNav" class="mobile-nav">
+    <button data-mobile-app="files"><span>💽</span><small>Drive</small></button>
+    <button data-mobile-app="litework"><span>🧰</span><small>LiteWork</small></button>
+    <button data-mobile-app="remote"><span>🖥️</span><small>Native</small></button>
+    <button id="mobileAppsBtn"><span>▦</span><small>Apps</small></button>
+    <button data-mobile-app="settings"><span>⚙️</span><small>Ajustes</small></button>
+  </nav>
+
+  <footer class="taskbar">
+    <button id="startBtn" class="task-logo"><img class="task-logo-img" src="assets/brand/twosix-mark.png" alt="TwoSix"></button>
+    <button id="taskSearch" class="task-search">⌕ <span>Pesquisar</span></button>
+    <div id="taskApps" class="task-apps"></div>
+    <button id="trayBtn" class="tray-btn">🌐 🔊 🔋</button>
+  </footer>
+</div>
+
+<template id="windowTemplate">
+  <article class="window">
+    <header class="window-bar"><div class="window-title"></div><div class="window-controls"><button data-act="min">—</button><button data-act="max">□</button><button data-act="close">×</button></div></header>
+    <div class="window-body"></div>
+  </article>
+</template>
+
+
+<div class="twosix-copyright">© 2026 Nailson Rodrigues de Lima</div>
+<script src="app.js"></script>
+</body>
+</html>
